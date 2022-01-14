@@ -1,37 +1,14 @@
-import {useContext, useEffect, useState} from "react"
-import Description from "../Description"
 import Item from "../Item"
-import ItemsContext from "../../context/ItemsContext"
+//import ItemsContext from "../../context/ItemsContext"
 
-function ItemResults() {
-    const {items, getItems} = useContext(ItemsContext)
-    const [productId, setProductId] = useState(null)
+function ItemResults({items, handleClick}) {
     
-    useEffect(()=> {
-      getItems()
-    }, [])
-
-    const handleClick = (e) => {
-        e.preventDefault() 
-        setProductId(e.target.id)
-        // getDescription(e.target.id)
-    }
-
-   
-    return (
-        <>
-        <div className="items-area">
+return (
          <div className="item-list">
             {items.map((item)=> (
                 <Item key={item.id} item={item} handleClick={handleClick}/>
             ))}
         </div>
-        <div className="description">
-                <Description id={productId}/>
-        </div>
-        </div>
-        
-        </>
     )
 }
 
