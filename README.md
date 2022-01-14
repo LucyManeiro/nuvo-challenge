@@ -1,4 +1,4 @@
-# Nuvolum Coding Challenge
+# Coding Challenge
 
 This mock website was a coding tehnical challenge. 
 
