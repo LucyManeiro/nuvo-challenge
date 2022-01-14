@@ -1,4 +1,4 @@
-import ReactStars from "react-rating-stars-component"
+import ReactStars from "react-stars"
 
 function Description({item, starRating}) {
  
@@ -16,6 +16,7 @@ function Description({item, starRating}) {
           value={item.rating.rate}
           size={24}
           isHalf={true}
+          edit={false}
           activeColor="#ffd700"
       />
       </div> 
