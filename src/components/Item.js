@@ -1,8 +1,10 @@
-
-function Item({item, handleClick}) {
+import { Link } from "react-scroll";
+import {BiChevronLeftCircle} from "react-icons/bi"
+function Item({item, handleClick, selectedClass}) {
 
 let itemName = null
 
+//this will create the proper display name based on the item.id
     if(item){
         switch(item.id){
             case 1: 
@@ -25,20 +27,27 @@ let itemName = null
             break;
         }
     }
+
     return (
         <>
-        <div className="image-section">
-            <img className="image" src={item.image} alt="item"/>  
-        </div>
-        <div className="name-button">
-                <h3>{itemName}</h3>
-                <button
-                id={item.id}
-                onClick={handleClick}
-                 className="item-button">Click</button>
-        </div>
-         
-        </>
+            <div className="images item">
+                <img className="image" src={item.image} alt="item"/>  
+            </div>
+        
+           <div className="name-button item">
+                <h4>{itemName}</h4>
+                <Link 
+                    smooth to="top"
+                    activeClass="active"
+                    duration={500}> 
+                <BiChevronLeftCircle
+                        id={item.id}
+                        onClick={handleClick}
+                        className="item-button"
+                /> 
+                </Link>
+            </div>
+         </>
     )
 }
 
