@@ -31,7 +31,7 @@ let itemName = null
     return (
         <>
             <div className="images item">
-                <img className="image" src={item.image} alt="item"/>  
+                <img className="image" src={item.image} alt={itemName}/>  
             </div>
         
            <div className="name-button item">
